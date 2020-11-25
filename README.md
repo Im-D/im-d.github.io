@@ -1,1 +1,1 @@
-# Manage Site
+# Management Site
