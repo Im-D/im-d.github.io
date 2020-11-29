@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+  <html lang="ko">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMD Process Site</title>
+    <link rel="stylesheet" href="https://im-d.github.io/Im-Infographic-FE/style@1.css">
+  </head>
+
+  <body />
+
+  <script type="module">
+    import { render } from 'https://unpkg.com/lit-html?module';
+    import APP from 'https://im-d.github.io/Im-Infographic-FE/src/index@1.js';
+
+    const fetchAuthor = fetch('https://im-d.github.io/Im-Infographic-BE/data/author/20201129.json').then(res => res.json())
+    const fetchIMDInfo = fetch('https://im-d.github.io/Im-Infographic-BE/data/imd_info/20201129.json').then(res => res.json())
+    const fetchIMDRepos = fetch('https://im-d.github.io/Im-Infographic-BE/data/imd_repos/20201129.json').then(res => res.json())
+    const fetchPR = fetch('https://im-d.github.io/Im-Infographic-BE/data/pr/20201129.json').then(res => res.json())
+
+    Promise.all([fetchAuthor, fetchIMDInfo, fetchIMDRepos, fetchPR])
+      .then(([author, imd_info, imd_repos, pr]) => {
+        const state = {
+          author, 
+          imd_info,
+          imd_repos,
+          pr
+        }
+        render(APP(state), document.body);
+      })
+  </script>
+
+  </html>
+ 
