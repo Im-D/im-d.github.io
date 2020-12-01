@@ -14,10 +14,10 @@
     import { render } from 'https://unpkg.com/lit-html?module';
     import APP from 'https://im-d.github.io/Im-Infographic-FE/src/index@1.js';
 
-    const fetchAuthor = fetch('https://im-d.github.io/Im-Infographic-BE/data/author/2020121.json').then(res => res.json())
-    const fetchIMDInfo = fetch('https://im-d.github.io/Im-Infographic-BE/data/imd_info/2020121.json').then(res => res.json())
+    const fetchAuthor = fetch('https://im-d.github.io/Im-Infographic-BE/data/author/20201201.json').then(res => res.json())
+    const fetchIMDInfo = fetch('https://im-d.github.io/Im-Infographic-BE/data/imd_info/20201201.json').then(res => res.json())
     const fetchIMDRepos = fetch('https://im-d.github.io/Im-Infographic-BE/data/imd_repos/2020121.json').then(res => res.json())
-    const fetchPR = fetch('https://im-d.github.io/Im-Infographic-BE/data/pr/2020121.json').then(res => res.json())
+    const fetchPR = fetch('https://im-d.github.io/Im-Infographic-BE/data/pr/20201201.json').then(res => res.json())
 
     Promise.all([fetchAuthor, fetchIMDInfo, fetchIMDRepos, fetchPR])
       .then(([author, imd_info, imd_repos, pr]) => {
