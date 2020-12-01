@@ -16,7 +16,7 @@
 
     const fetchAuthor = fetch('https://im-d.github.io/Im-Infographic-BE/data/author/20201201.json').then(res => res.json())
     const fetchIMDInfo = fetch('https://im-d.github.io/Im-Infographic-BE/data/imd_info/20201201.json').then(res => res.json())
-    const fetchIMDRepos = fetch('https://im-d.github.io/Im-Infographic-BE/data/imd_repos/2020121.json').then(res => res.json())
+    const fetchIMDRepos = fetch('https://im-d.github.io/Im-Infographic-BE/data/imd_repos/20201201.json').then(res => res.json())
     const fetchPR = fetch('https://im-d.github.io/Im-Infographic-BE/data/pr/20201201.json').then(res => res.json())
 
     Promise.all([fetchAuthor, fetchIMDInfo, fetchIMDRepos, fetchPR])
